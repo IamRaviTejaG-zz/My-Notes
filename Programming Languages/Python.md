@@ -11,17 +11,17 @@ There are six fundamental data types in Python. They are:
 5. Set `<set>`
 6. Tuple `<tuple>`
 
-##### Numbers
+#### Numbers
 Numbers include integer, float, complex & long data types.
-##### String
+#### String
 Strings are a series of Unicode characters.
-##### List
+#### List
 List is an ordered sequence of items. A **list**, similar to a C++ `<vector>` is **mutable**.
-##### Dictionary
+#### Dictionary
 Dictionary is an unordered collection of key-value pairs. It is similar to C++'s `<map>`.
-##### Set
+#### Set
 **Set** is an unordered collection of **unique** items. It is defined by values separated by comma inside curly braces.
-##### Tuple
+#### Tuple
 Tuple is an ordered sequence of items same as list. The only difference is that **tuples** are **immutable**. Tuples once created cannot be modified.
 
 
@@ -35,7 +35,7 @@ my_bool_variable = False
 my_string_variable = "A string type variable."
 my_list_variable = [1, 2, 3]
 my_dict_variable = {"key1": "value1", "key2": "value2"}
-my_set_variable = set([1, 2, 3, 2, 1])
+my_set_variable = set([1, 2, 3, 2, 1]) # {1, 2, 3}
 # my_set_variable = {1, 2, 3}
 ```
 
@@ -47,7 +47,7 @@ Single line (or inline comments) start with an _hash_ (`#`) sign.
 # This is a single line (or inline) comment.
 ```
 
-Multi-line comments start with _triple-quotation_(`"""`) blocks.
+Multi-line comments start with _triple-quotation_ (`"""`) blocks.
 ```python
 """
 This is a multi-line comment.
@@ -73,7 +73,7 @@ seventeen_squared = 17 ** 2
 **NOTE**: Please avoid using `^` for exponentiation. `^` in Python stands for `Bitwise XOR`.
 
 ### Escaping Characters
-Consider the string: `'There's a snake in my boat!'`. The apostrophe in `There's` causes Python to think that the string ends there. To fix this, use a _backslash_ (`\`). The correct way of using _backslash_ is as:
+Consider the string: `'There's a snake in my boat!'`. The apostrophe in `There's` causes Python to think that the string ends there. To fix this, use a _backslash_ (`\`). The correct way of using _backslash_ is:
 
 ```python
 string = 'There\'s a snake in my boat!'
