@@ -2,7 +2,7 @@
 
 Python is a high-level multi-paradigm programming language.
 
-### Data Types
+## Data Types
 There are six fundamental data types in Python. They are:
 1. Numbers `<int>, <float>, <complex>, <long>`
 2. String `<str>`
@@ -36,7 +36,7 @@ There are six fundamental data types in Python. They are:
 - The only difference is that **tuples** are **immutable**.
 - It is similar to a C++ `<array>` container.
 
-### Variables
+## Variables
 Python doesn't require declaring variables with data types. Directly assign values to variables using the _assignment_ (`=`) operator.
 ```python
 my_integer_variable = 7
@@ -96,7 +96,7 @@ print (type(17)) # Prints <class 'int'>
 print (type("Hello World!")) # Prints <class 'str'>
 ```
 
-### Integer & Float Methods
+## Integer & Float Methods
 - #### Maximum: `max()`
   - Returns the largest of the values passed in the parenthesis.
 ```python
@@ -113,7 +113,7 @@ print (min(17, 24)) # Prints 17
 print (abs(-17)) # Prints 17
 ```
 
-### String Methods
+## String Methods
 - #### Length of a string: `.len()`
 ```python
 string = "This is a string."
