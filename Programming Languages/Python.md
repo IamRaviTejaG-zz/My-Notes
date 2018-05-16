@@ -49,7 +49,7 @@ my_dict_variable = {"key1": "value1", "key2": "value2"}
 my_set_variable = set([1, 2, 3, 2, 1]) # {1, 2, 3}
 ```
 
-### Comments
+## Comments
 Similar to other programming languages, Python allows single line and multi-line comments.
 
 Single line (or inline comments) start with an _hash_ (`#`) sign.
@@ -65,7 +65,7 @@ This is the second line of a multi-line comment.
 """
 ```
 
-### Mathematical Operations
+## Mathematical Operations
 Mathematical operations can be performed in Python as follows:
 ```python
 sum_vars = 176 + 371
@@ -82,14 +82,14 @@ seventeen_squared = 17 ** 2
 
 **NOTE**: Please avoid using `^` for exponentiation. `^` in Python stands for `Bitwise XOR`.
 
-### Escaping Characters
+## Escaping Characters
 Consider the string: `'There's a snake in my boat!'`. The apostrophe in `There's` causes Python to think that the string ends there. To fix this, use a _backslash_ (`\`). The correct way of using _backslash_ is:
 
 ```python
 string = 'There\'s a snake in my boat!'
 ```
 
-### `type()` Method
+## `type()` Method
 The `type(variable_name)` method returns the data type of the passed variable.
 ```python
 print (type(17)) # Prints <class 'int'>
@@ -170,7 +170,7 @@ str2 = "place"
 print ("Let's not go to %s. 'Tis is a silly %s." % (str1, str2))
 ```
 
-- #### String Slicing: `string[start:stop:stride]`
+- #### String Slicing:
 A string can be considered as a list of characters. Characters of a string can be accessed by using index. The syntax is:
 ```python
 string_name[start_index : end_index : stride]
@@ -188,7 +188,7 @@ string_name[start_index : end_index : stride]
   print (str2) # Prints "string"
   ```
 
-### List Methods
+## List Methods
 An empty list can be declared as:
 ```python
 empty_list = []
@@ -221,3 +221,61 @@ print (list1) # Prints [1, 2, 4, 3]
   - `list_name.pop(index)`: Will remove the item at index from the list and return it to you
   - `list_name.remove(item)`: Will remove the actual item from the list if it finds it. In case of multiple occurrences, the first occurrence is removed.
   - `del(list_name[index])`: This is similar to `.pop()`, but this doesn't return the value.
+
+- #### List Slicing:
+  ```python
+  list_name[start_index : end_index : stride]
+  ```
+    - `start_index` is the index you need to start slicing from.
+    - `end_index` is the index you need to end slicing at.
+      - **NOTE**: The element at index `end_index` is not included in the sliced index. So an extra 1 should be added to include the left over element.
+    - `stride` is the jump factor. If you want all the characters, stride should be 1. If you want every alternate character, stride should be 2, and so on.
+      - **NOTE**: `stride` is an _optional_ parameter. If not passed explicitly, Python assumes the
+      default value of `stride` equal to `1`.
+
+  ```python
+  list1 = [1, 2, 3, 4]
+  list2 = list1[0:2] # stride is not passed.
+  list3 = list1[::2] # only stride is passed
+  print (list2) # Prints [1, 2]
+  print (list3) # Prints [1, 3]
+  ```
+
+- #### Joining Lists
+Use the `+` operator to join the lists.
+  ```python
+  list1 = [1, 2, 3]
+  list2 = [4, 5, 6]
+  list3 = list1 + list2
+  print (list3) # [1, 2, 3, 4, 5, 6]
+  ```
+
+## Dictionaries
+A dictionary is similar to a list, but you access values by looking up a key instead of an index. A key can be any string or number.
+```python
+dict1 = {"key1": 1, "key2": 2, "key3": 3}
+print (dict1['key1']) # Prints 1
+print (dict1['key2']) # Prints 2
+```
+
+- #### Inserting items to dictionary:
+```python
+dict1 = {"key1": 1, "key2": 2, "key3": 3}
+dict1['key4'] = 4 # Adds "key4": 4 to dict1
+dict1['key5'] = 5 # Adds "key5": 5 to dict1
+print (dict1) # Prints dict1 = {"key1": 1, "key2": 2, "key3": 3, "key4": 4, "key5": 5}
+```
+
+- #### Deleting from dictionary:
+```python
+del dict_name['key_name']
+```
+
+## `range()` Method
+The python `range()` method is just a shortcut for generating a list, so you can use ranges in all the same places you can use lists. The range has the syntax:
+```python
+range(start, stop, step)
+```
+In all cases, the `range()` method returns a list of numbers from `start` upto `stop` (but not including `stop`). Each item increases by step.
+
+**NOTE**: If omitted, `start` defaults to `0` and `step` defaults to `1`.
