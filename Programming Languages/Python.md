@@ -188,6 +188,14 @@ string_name[start_index : end_index : stride]
   print (str2) # Prints "string"
   ```
 
+- #### Reversing Strings
+Setting `stride` to `-1` gives you the reversed string.
+```python
+my_string = "Hello"
+backwards = my_string[::-1]
+print (backwards) # "olleH"
+```
+
 ## List Methods
 An empty list can be declared as:
 ```python
@@ -230,8 +238,7 @@ print (list1) # Prints [1, 2, 4, 3]
     - `end_index` is the index you need to end slicing at.
       - **NOTE**: The element at index `end_index` is not included in the sliced index. So an extra 1 should be added to include the left over element.
     - `stride` is the jump factor. If you want all the characters, stride should be 1. If you want every alternate character, stride should be 2, and so on.
-      - **NOTE**: `stride` is an _optional_ parameter. If not passed explicitly, Python assumes the
-      default value of `stride` equal to `1`.
+      - **NOTE**: `stride` is an _optional_ parameter. If not passed explicitly, Python assumes the default value of `stride` equal to `1`.
 
   ```python
   list1 = [1, 2, 3, 4]
@@ -249,6 +256,14 @@ Use the `+` operator to join the lists.
   list3 = list1 + list2
   print (list3) # [1, 2, 3, 4, 5, 6]
   ```
+
+- #### Reversing Lists
+Setting `stride` to `-1` gives you the reversed list.
+```python
+my_list = range(1, 11)
+backwards = my_list[::-1]
+print (backwards) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+```
 
 ## Dictionaries
 A dictionary is similar to a list, but you access values by looking up a key instead of an index. A key can be any string or number.
@@ -357,4 +372,51 @@ In all cases, the `range()` method returns a list of numbers from `start` upto `
 choices = ["pizza", "pasta", "salad", "nachos"]
 for index, item in enumerate(choices):
   print (index+1, item)
+```
+
+##  List Comprehensions
+List comprehensions are a powerful way to generate lists based on some logic - for example, a list of all the even numbers from 0 to 50. This can be done using `for`, `in` & `if` keywords.
+```python
+ints_1to5 = [x for x in range(1, 6)] # [1, 2, 3, 4, 5]
+doubles = [x*2 for x in range(1, 6)] # [2, 4, 6, 8, 10]
+doubles_by_3 = [x*2 for x in range(1, 6) if (x*2)%3 == 0] # [6]
+even_squares = [x**2 for x in range(1, 12) if (x%2) == 0] # [4, 16, 36, 64, 100]
+```
+
+## Imports
+In Python, depending upon the necessity, different modules might need to be imported. There are different types of import:
+- #### Generic Import
+This imports the whole module, and thus all the methods of the module. You need to use the `module_name.method(argument)` syntax. Do not forget the _dot_ notation.
+```python
+import math
+print (math.sqrt(25)) # Prints 5
+```
+
+- #### Function Import
+If only a single function needs to be imported from a library, function import is a better way out.
+```python
+from math import sqrt
+print (sqrt(25)) # Prints 5
+```
+
+- #### Universal Import
+If we want to import all the variables & modules of a function, but do not want to continuously type `module_name.`, then universal import can handle such a situation.
+```python
+from math import *
+print (sqrt(25)) # Prints 5
+```
+**NOTE**: Universal imports fill your program with tons of variables and methods. So, if you have a function of your own & it contains variables & functions with same name of the imported library, then you won't be able to figure out which variable or function came from where.
+
+## Functions
+Use the `def` keyword to define a function.
+```python
+def myFunction(anyArgument):
+  print (anyArgument)
+```
+- ### Lambdas / Anonymous Functions
+Lambdas are useful when you need a quick function to do some work for you. If you plan on creating a function you will use over and over, you're better off using `def` and giving that function a name.
+```python
+fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+odd_numbers = list(filter(lambda x: x%2, fibonacci))
+print (odd_numbers) # Prints [1, 1, 3, 5, 13, 21, 55]
 ```
