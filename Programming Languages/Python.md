@@ -231,22 +231,23 @@ print (list1) # Prints [1, 2, 4, 3]
   - `del(list_name[index])`: This is similar to `.pop()`, but this doesn't return the value.
 
 - #### List Slicing:
-  ```python
-  list_name[start_index : end_index : stride]
-  ```
-    - `start_index` is the index you need to start slicing from.
-    - `end_index` is the index you need to end slicing at.
-      - **NOTE**: The element at index `end_index` is not included in the sliced index. So an extra 1 should be added to include the left over element.
-    - `stride` is the jump factor. If you want all the characters, stride should be 1. If you want every alternate character, stride should be 2, and so on.
-      - **NOTE**: `stride` is an _optional_ parameter. If not passed explicitly, Python assumes the default value of `stride` equal to `1`.
+```python
+list_name[start_index : end_index : stride]
+```
 
-  ```python
-  list1 = [1, 2, 3, 4]
-  list2 = list1[0:2] # stride is not passed.
-  list3 = list1[::2] # only stride is passed
-  print (list2) # Prints [1, 2]
-  print (list3) # Prints [1, 3]
-  ```
+  - `start_index` is the index you need to start slicing from.
+  - `end_index` is the index you need to end slicing at.
+    - **NOTE**: The element at index `end_index` is not included in the sliced index. So an extra 1 should be added to include the left over element.
+  - `stride` is the jump factor. If you want all the characters, stride should be 1. If you want every alternate character, stride should be 2, and so on.
+    - **NOTE**: `stride` is an _optional_ parameter. If not passed explicitly, Python assumes the default value of `stride` equal to `1`.
+
+```python
+list1 = [1, 2, 3, 4]
+list2 = list1[0:2] # stride is not passed.
+list3 = list1[::2] # only stride is passed
+print (list2) # Prints [1, 2]
+print (list3) # Prints [1, 3]
+```
 
 - #### Joining Lists
 Use the `+` operator to join the lists.
