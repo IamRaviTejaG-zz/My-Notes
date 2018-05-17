@@ -279,3 +279,82 @@ range(start, stop, step)
 In all cases, the `range()` method returns a list of numbers from `start` upto `stop` (but not including `stop`). Each item increases by step.
 
 **NOTE**: If omitted, `start` defaults to `0` and `step` defaults to `1`.
+
+## Conditional & Control Flow
+- #### Comparators
+  1. Equal To (`==`)
+  2. Less Than (`<`)
+  3. Greater Than (`>`)
+  4. Not equal to (`!=`)
+  5. Less than or equal to (`<=`)
+  6. Greater than or equal to (`>=`)
+
+- #### Boolean Operators
+  1. `and` checks if both statements are true.
+  2. `or` checks if either of the statement is true.
+  3. `not` gives the opposite of the statement.
+
+- #### Order of precedence of Boolean Operators
+`not` is evaluated first, `and` is evaluated next and `or` is evaluated at last.
+
+- #### `if`, `elif` & `else`
+    ```python
+    someRandomInt = 3
+    if (someRandomInt < 2): # if (condition):
+      print ("someRandomInt < 2")
+    # elif & else are optional statements.
+    elif (someRandomInt > 2 and someRandomInt < 4): # elif (condition):
+      print ("someRandomInt > 2 and someRandomInt < 4")
+    else:
+      print ("someRandomInt > 4")
+    ```
+
+## Loops
+- #### For Loop
+  ```python
+  for i in range(0, 5, 1): # range(start, stop, step)
+    print (i)
+  # Prints 0 1 2 3 4
+  ```
+  ```python
+  list1 = [1, 2, 3, 4]
+  for i in list1:
+    print (i) # Prints all items in list
+  ```
+  ```python
+  list1 = [[1, 2, 3, 4], [5, 6, 7, 8]] # List of lists
+  for i in list1:
+    for j in i:
+      print (j) # Prints each element in the list of lists.
+  ```
+
+- #### For/Else Loop
+  ```python
+  for i in range(0, 5, 1): # range(start, stop, step)
+    print (i)
+  else:
+    print (i)
+  # Prints 0 1 2 3 4 4
+  ```
+
+- #### While Loop
+  ```python
+  while (condition):
+    print ("Condition true!")
+  ```
+
+- #### While/Else Loop
+  ```python
+  while (condition):
+    print ("Condition true!")
+  else:
+    print ("Condition false!")
+  ```
+
+## `enumerate()` Method
+`enumerate()` method works by supplying a corresponding index to each element in the list that you pass it. Each time you go through the loop, `index` will be one greater and `item` will be the next item in the sequence.
+```python
+choices = ["pizza", "pasta", "salad", "nachos"]
+for index, item in enumerate(choices):
+  print (index+1, item)
+```
