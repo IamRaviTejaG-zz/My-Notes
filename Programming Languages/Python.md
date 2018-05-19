@@ -547,11 +547,12 @@ desired = num & mask
 if (desired > 0):
   print ("Bit was on!")
 ```
-  In the above example, we want to see if the third bit from the right was on.
-    1. First, we create a variable `num` containing the number 12.
-    2. Next, we create a variable `mask` with only the third bit on.
-    3. Then, we use the bitwise AND to see if the third bit from right of `num` is on.
-    4. If `desired` > 0, then the third bit of `num` must have been one.
+
+  In the above example, we want to see if the third bit from the right was on.   
+  1. First, we create a variable `num` containing the number 12.
+  2. Next, we create a variable `mask` with only the third bit on.
+  3. Then, we use the bitwise AND to see if the third bit from right of `num` is on.
+  4. If `desired` > 0, then the third bit of `num` must have been one.
 
   - ##### `OR` Bit Mask
   ```python
@@ -580,10 +581,10 @@ f = open("output.txt", "w")
 ```
 This says Python to open `output.txt` in `w` mode (write mode).
   - ##### Different modes of opening a file
-  1. `w`: Write-only mode.
-  2. `r`: Read-only mode.
-  3. `r+`: Read & Write mode.
-  4. `a`: Append mode. Adds any new data to the end of the file.
+    - `w`: Write-only mode.
+    - `r`: Read-only mode.
+    - `r+`: Read & Write mode.
+    - `a`: Append mode. Adds any new data to the end of the file.
 
 - #### Writing to file: `write()` Method
 ```python
