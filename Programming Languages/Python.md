@@ -225,6 +225,7 @@ list1 = [1, 2, 3]
 list1.insert(2, 4)
 print (list1) # Prints [1, 2, 4, 3]
 ```
+
 - #### Removing items from a list:
   - `list_name.pop(index)`: Will remove the item at index from the list and return it to you
   - `list_name.remove(item)`: Will remove the actual item from the list if it finds it. In case of multiple occurrences, the first occurrence is removed.
@@ -241,22 +242,22 @@ list_name[start_index : end_index : stride]
   - `stride` is the jump factor. If you want all the characters, stride should be 1. If you want every alternate character, stride should be 2, and so on.
     - **NOTE**: `stride` is an _optional_ parameter. If not passed explicitly, Python assumes the default value of `stride` equal to `1`.
 
-```python
-list1 = [1, 2, 3, 4]
-list2 = list1[0:2] # stride is not passed.
-list3 = list1[::2] # only stride is passed
-print (list2) # Prints [1, 2]
-print (list3) # Prints [1, 3]
-```
+  ```python
+  list1 = [1, 2, 3, 4]
+  list2 = list1[0:2] # stride is not passed.
+  list3 = list1[::2] # only stride is passed
+  print (list2) # Prints [1, 2]
+  print (list3) # Prints [1, 3]
+  ```
 
 - #### Joining Lists
 Use the `+` operator to join the lists.
-  ```python
-  list1 = [1, 2, 3]
-  list2 = [4, 5, 6]
-  list3 = list1 + list2
-  print (list3) # [1, 2, 3, 4, 5, 6]
-  ```
+```python
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = list1 + list2
+print (list3) # [1, 2, 3, 4, 5, 6]
+```
 
 - #### Reversing Lists
 Setting `stride` to `-1` gives you the reversed list.
@@ -287,6 +288,15 @@ print (dict1) # Prints dict1 = {"key1": 1, "key2": 2, "key3": 3, "key4": 4, "key
 del dict_name['key_name']
 ```
 
+- #### `.items()`, `.keys()` & `.values()` Methods:
+  `.items()` returns all the items, `.keys()` returns all the keys & `.values()` returns all the values of a dictionary.
+```python
+dict1 = {"key1": 1, "key2": 2, "key3": 3}
+print (dict1.items()) # Prints dict_items([('key1', 1), ('key2', 2), ('key3', 3)])
+print (dict1.keys()) # Prints dict_keys(['key1', 'key2', 'key3'])
+print (dict1.values()) # Prints dict_values([1, 2, 3])
+```
+
 ## `range()` Method
 The python `range()` method is just a shortcut for generating a list, so you can use ranges in all the same places you can use lists. The range has the syntax:
 ```python
@@ -296,7 +306,7 @@ In all cases, the `range()` method returns a list of numbers from `start` upto `
 
 **NOTE**: If omitted, `start` defaults to `0` and `step` defaults to `1`.
 
-## Conditional & Control Flow
+## Conditionals & Control Flow
 - #### Comparators
   1. Equal To (`==`)
   2. Less Than (`<`)
@@ -411,13 +421,207 @@ print (sqrt(25)) # Prints 5
 ## Functions
 Use the `def` keyword to define a function.
 ```python
-def myFunction(anyArgument):
+def myFunction(arg, *args, **kwargs):
   print (anyArgument)
 ```
+
+- ### Variable number of arguments
+Python allows you to pass variable number of arguments into the function. This can be achieved using `*args`.
+  ```python
+  def myFunction(*args):
+    print ("Arguments passed via *args:")
+    for arg in args:
+      print (arg)
+
+  myFunction("Hello", "World", "Python is Amazing!")
+  # Prints:
+  # Arguments passed via *args:
+  # Hello
+  # World
+  # Python is Amazing!
+  ```
+
+- ### Keyword Arguments
+`**kwargs` allows you to handle named arguments that you have not defined in advance.
+  ```python
+  def myFunction(**kwargs):
+    for name, value in kwargs.items(): # Since kwargs is a dictionary, so we use .items()
+      print (name + " = " + value)
+
+  myFunction(name="Python", description="Amazing Programming Language")
+  # Prints:
+  # name = Python
+  # description = Amazing Programming Language
+  ```
+
 - ### Lambdas / Anonymous Functions
 Lambdas are useful when you need a quick function to do some work for you. If you plan on creating a function you will use over and over, you're better off using `def` and giving that function a name.
 ```python
 fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 odd_numbers = list(filter(lambda x: x%2, fibonacci))
 print (odd_numbers) # Prints [1, 1, 3, 5, 13, 21, 55]
+```
+
+## Bitwise Operators
+Bitwise operations are operations that directly manipulate bits. In computers, numbers are represented with bits, a series of zeroes and ones. In fact, pretty much everything in a computer is represented by bits. Bitwise operators often tend to puzzle and mystify new programmers, but to be honest, you aren't really going to see bitwise operations in an everyday program. However, they do pop up from time to time, and when they do, you should have a general idea of what is going on.
+
+```python
+print (5 >> 4) # Right shift
+print (5 << 1) # Left shift
+print (8 & 5) # Bitwise AND
+print (9 | 4) # Bitwise OR
+print (12 ^ 42) # Bitwise XOR
+print (~ 88) # Bitwise NOT
+```
+
+- #### The `.bin()` Method
+`.bin()` converts an integer, octal or hexadecimal number to binary.
+
+  **NOTE**: In Python, all the binary numbers start with the prefix **0b**.
+```python
+a = 17
+b = bin(a)
+print (b) # Prints 0b10001
+```
+
+- #### The `.int()` Method's Second Parameter
+The `.int()` method has an optional second parameter, which is the _base of the number_ you are passing as the first parameter.
+```python
+print (int("1100", 2)) # Prints 12
+print (int("1100", 8)) # Prints 576
+print (int("1100", 16)) # Prints 4352
+```
+
+- #### Left Bit Shift & Right Bit Shift
+These operators work by shifting the bits of a number by a designated number of slots. An example:
+```
+Left Bit Shift:
+0b000001 << 2 = 0b000100 (1 << 2 = 4)
+0b000101 << 3 = 0b101000 (5 << 3 = 40)
+Right Bit Shift:
+0b0010100 >> 3 = 0b000010 (20 >> 3 = 2)
+0b0000010 >> 2 = 0b0000000 (2 >> 2 = 0)
+```
+**NOTE 1**: This operation is mathematically equivalent to floor dividing and multiplying by 2 (respectively) for every time you shift, but it's often easier just to think of it as shifting all the 1s and 0s left or right by the specified number of slots.
+
+  **NOTE 2**: You can only do bitwise operations on an integer. Trying to do them on strings or floats will result in nonsensical output.
+
+- #### Bitwise 'AND' Operator
+The Bitwise AND (`&`) operator compares two numbers n a bit level and returns a number where the bits of that number are turned on if the corresponding bits of both the numbers are 1.
+```python
+a = 0
+b = 1
+print (a & b) # Prints 0
+```
+
+- #### Bitwise 'OR' Operator
+The Bitwise OR (`|`) operator compares two numbers on a bit level and returns a number where the bits of that number are turned on if either of the corresponding bits of either number are 1.
+```python
+a = 0
+b = 1
+print (a | b) # Prints 1
+```
+
+- #### Bitwise 'XOR' Operator
+The Bitwise XOR (`^`) operator compares two numbers on a bit level and returns a number where the bits of that number are turned on if either of the corresponding bits of the two numbers are 1, but not both.
+```python
+a = 0b00101010
+b = 0b00001111
+print (a ^ b) # Prints 0b00100101
+```
+
+- #### Bitwise 'NOT' Operator
+The Bitwise NOT (`~`) operator just flips out all the bits in a single number. What this actually means to the computer is actually very complicated, just know that, this is equivalent to adding one to that number and then making it negative.
+```python
+a = 55
+print (~a) # Prints -56
+```
+
+- #### Bit Mask
+A bit mask is just a variable that aids you with bitwise operations. A bit mask can help you turn specific bits on, turn others off, or just collect data from an integer about which bits are on or off.
+  - ##### `AND` Bit Mask
+```python
+num = 0b1100
+mask = 0b0100
+desired = num & mask
+if (desired > 0):
+  print ("Bit was on!")
+```
+  In the above example, we want to see if the third bit from the right was on.
+    1. First, we create a variable `num` containing the number 12.
+    2. Next, we create a variable `mask` with only the third bit on.
+    3. Then, we use the bitwise AND to see if the third bit from right of `num` is on.
+    4. If `desired` > 0, then the third bit of `num` must have been one.
+
+  - ##### `OR` Bit Mask
+  ```python
+  a = 0b110
+  mask = 0b1
+  desired = a | mask
+  ```
+  - ##### `XOR` Bit Mask (Flipping Out)
+  ```python
+  a = 0b110
+  mask = 0b111
+  desired = a ^ mask
+  ```
+  - ##### Left Shift, Right Shift Bit Mask
+  ```python
+  a = 0b101
+  # Tenth bit mask
+  mask = (0b1 << a) # one less than ten
+  desired = a ^  mask
+  ```
+
+## File I/O
+- #### Opening a file: `open()` Method
+```python
+f = open("output.txt", "w")
+```
+This says Python to open `output.txt` in `w` mode (write mode).
+  - ##### Different modes of opening a file
+  1. `w`: Write-only mode.
+  2. `r`: Read-only mode.
+  3. `r+`: Read & Write mode.
+  4. `a`: Append mode. Adds any new data to the end of the file.
+
+- #### Writing to file: `write()` Method
+```python
+f = open("output.txt", "w")
+f.write("Hello World!") # Writes to the file 'f' opened above
+f.close()
+```
+**NOTE**: Once finished with writing, you **must** close the file. You can do this by calling `f.close()`.  If you don't close your file, Python won't write to it properly.
+
+- #### Reading from file: `.read()` Method
+```python
+f = open("output.txt", "r")
+print (f.read())
+f.close()
+```
+
+- #### Reading Between The Lines: `.readline()` Method
+To read the file line by line, we use the `.readline()` method. If you open a file and call `.readline()` on the file object, you'll get the first line of the file, subsequent calls to the `.readline()` method will return successive lines.
+```python
+f = open("output.txt", "r")
+print (f.readline())
+f.close()
+```
+
+- #### The `with` & `as` Keywords
+Using the `with` & `as` keywords for opening a file is the **most recommended** way since this method automatically closes the file once the work is done.
+```python
+with open("output.txt", "r") as f:
+    print (f.read())
+# Once read, the file automatically is closed, thus ensuring your data is written successfully into the file.
+```
+- #### File Closed?: `.closed` Attribute
+Finally, you might want a way to check if the file has been successfully closed. To do this, we use the `.closed` attribute, which is `True` when the file is closed, and `False` otherwise.
+```python
+f = open("output.txt")
+f.closed
+# False
+f.close()
+f.closed
+# True
 ```
