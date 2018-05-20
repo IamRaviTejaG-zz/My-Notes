@@ -2,6 +2,28 @@
 
 Python is a high-level multi-paradigm programming language.
 
+### Table of Contents:
+* [Data Types](#data-types)
+* [Variables](#variables)
+* [Comments](#comments)
+* [Mathematical Operations](#mathematical-operations)
+* [Escaping Characters](#escaping-characters)
+* [type() Method](#type-method)
+* [Integer & Float Methods](#integer--float-methods)
+* [String Methods](#string-methods)
+* [List Methods](#list-methods)
+* [Dictionaries](#dictionaries)
+* [range() Method](#range-method)
+* [Conditionals & Control Flow](#conditionals--control-flow)
+* [Loops](#loops)
+* [List Comprehensions](#list-comprehensions)
+* [Imports](#imports)
+* [Functions](#functions)
+* [Bitwise Operators](#bitwise-operators)
+* [File I/O](#file-io)
+
+***
+
 ## Data Types
 There are six fundamental data types in Python. They are:
 1. Numbers `<int>, <float>, <complex>, <long>`
