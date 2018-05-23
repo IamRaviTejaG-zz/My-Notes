@@ -65,7 +65,7 @@ Wallets are of different types depending on where they are stored.
 - The public key is similar to an account number, to which the coins are to be sent to or to be received at.
 - A bitcoin public key is usually 33-34 characters long and is Base58, and thus doesn't contain similar looking characters like `l` & `I` (small l & capital I), `0` and `O` (zero and the alphabet O), etc.
 - A total of 2^160 public addresses are possible.
-- A bitcoin address **always starts with `1`**, except for [_MultiSig addresses_](#Multisig-Addresses), **which start with `3`**.
+- A bitcoin address **always starts with `1`**, except for [_MultiSig addresses_](#24-multisig-addresses), **which start with `3`**.
 
 #### **2.3. Private Keys**
 - Private keys are the secret part of the public-private key pair generated while creating a wallet.
