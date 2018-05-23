@@ -1,31 +1,31 @@
 # Bitcoin
 
 ### Table of Contents:
-- **Basics**
-  - What is Bitcoin?
-  - How does Bitcoin work?
-  - What is Blockchain?
-  - Full Nodes
-  - Proof of Work
-- **Wallets**
-  - Types of Wallets
-  - Public Keys
-  - Private Keys
-  - Multisig Addresses
-- **Transactions**
-  - Send Bitcoin
-  - Receive Bitcoin
-  - Network Fees (Miner Fees)
-- **Mining**
-  - Generating Bitcoin
-  - Block Reward
-- **Blockchain**
-  - Blocks
-  - Block Height
-  - Block Size
-- **Forks**
-  - Soft Forks
-  - Hard Forks
+- [**Basics**](#1-basics)
+  - [What is Bitcoin?](#11-what-is-bitcoin)
+  - [How does Bitcoin work?](#12-how-does-bitcoin-work)
+  - [What is Blockchain?](#13-what-is-blockchain)
+  - [Full Nodes](#14-full-nodes)
+  - [Proof of Work](#15-proof-of-work)
+- [**Wallets**](#2-wallets)
+  - [Types of Wallets](#21-type-of-wallets)
+  - [Public Keys](#22-public-keys)
+  - [Private Keys](#23-private-keys)
+  - [Multisig Addresses](#24-multisig-addresses)
+- [**Transactions**](#3-transactions)
+  - [Send Bitcoin](#31-send-bitcoin)
+  - [Receive Bitcoin](#32-receive-bitcoin)
+  - [Network Fees (Miner Fees)](#33-network-fees-miners-feestransaction-fees)
+- [**Mining**](#4-mining)
+  - [Generating Bitcoin](#41-generating-bitcoin)
+  - [Block Reward](#42-block-reward)
+- [**Blockchain**](#5-blockchain)
+  - [Blocks](#51-blocks)
+  - [Block Height](#52-block-height)
+  - [Block Size](#53-block-size)
+- [**Forks**](#6-forks)
+  - [Soft Forks](#61-soft-forks)
+  - [Hard Forks](#62-hard-forks)
 ***
 
 ### 1. Basics
