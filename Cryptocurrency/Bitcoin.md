@@ -26,6 +26,10 @@
 - [**Forks**](#6-forks)
   - [Soft Forks](#61-soft-forks)
   - [Hard Forks](#62-hard-forks)
+- [**Advanced Concepts**](#7-advanced-concepts)
+  - [Double Spend Attack](#71-double-spend-attack)
+  - [51% Attack](#72-51-attack)
+  - [Segregated Witness (SegWit)](#73-segregate-witness)
 ***
 
 ### 1. Basics
@@ -124,3 +128,11 @@ Soft Forks are changes in the original source code of Bitcoin which was agreed u
 
 #### **6.2. Hard Forks**
 Hard Forks are completely new branches originating from Bitcoin. These usually have differences in terms of the working principle. Bitcoin's hard forks include Bitcoin Cash (BCH), Bitcoin Gold (BTG), etc.
+
+
+### 7. Advanced Concepts
+#### **7.1. Double Spend Attack**
+
+#### **7.2. 51% Attack**
+
+#### **7.3. Segregated Witness (SegWit)**
