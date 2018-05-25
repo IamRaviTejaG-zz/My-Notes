@@ -30,7 +30,7 @@
   - [Race Attack](#71-race-attack)
   - [51% Attack](#72-51-attack)
 - [**Other Frequently Used Terms**](#8-other-frequently-used-terms)
-  - [Segregated Witness (SegWit)](#81-segregate-witness-segwit)
+  - [Segregated Witness (SegWit)](#81-segregated-witness-segwit)
   - [Bitcoin Improvement Protocols (BIPs)](#82-bitcoin-improvement-proposals-bips)
 ***
 
