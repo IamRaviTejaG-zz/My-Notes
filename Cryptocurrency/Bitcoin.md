@@ -26,10 +26,12 @@
 - [**Forks**](#6-forks)
   - [Soft Forks](#61-soft-forks)
   - [Hard Forks](#62-hard-forks)
-- [**Advanced Concepts**](#7-advanced-concepts)
-  - [Double Spend Attack](#71-double-spend-attack)
+- [**Possible Attacks**](#7-possible-attacks)
+  - [Race Attack](#71-race-attack)
   - [51% Attack](#72-51-attack)
-  - [Segregated Witness (SegWit)](#73-segregate-witness)
+- [**Other Frequently Used Terms**](#8-other-frequently-used-terms)
+  - [Segregated Witness (SegWit)](#81-segregate-witness-segwit)
+  - [Bitcoin Improvement Protocols (BIPs)](#82-bitcoin-improvement-proposals-bips)
 ***
 
 ### 1. Basics
@@ -130,11 +132,11 @@ Soft Forks are changes in the original source code of Bitcoin which was agreed u
 Hard Forks are completely new branches originating from Bitcoin. These usually have differences in terms of the working principle. Bitcoin's hard forks include Bitcoin Cash (BCH), Bitcoin Gold (BTG), etc.
 
 
-### 7. Attacks:
-#### **7.1 Race Attack**
+### 7. Possible Attacks:
+#### **7.1. Race Attack**
 _Race Attack_ can occur when a merchant/trader accepts unconfirmed transactions. In this type of attack, the buyer sends a payment transaction to the merchant and then sends a conflicting transaction to himself (possibly, by also paying higher miners fees), this way the second transaction stands a higher chance to get confirmed and the buyer also gets the product for free. This can be prevented by the merchants by waiting for around 3-6 confirmations on the bitcoin network before providing the goods to the buyer.
 
-#### **7.1 51% Attack**
+#### **7.2. 51% Attack**
 A blockchain is a chain of blocks, bundles of data that record all completed transactions during a given period of time. Once a block is mined, it cannot be altered, since a fraudulent version of the public ledger would quickly be spotted and rejected by the network's users. However, by controlling the majority of the computing power on the network (>= 51% of the network hashrate), an attacker or group of attackers can interfere with the process of recording new blocks. They can prevent other miners from completing blocks, theoretically allowing them to monopolize the mining of new blocks. This type of attack is known as the _51% Attack%_.
 
 ### 8. Other Frequently Used Terms
@@ -142,4 +144,4 @@ A blockchain is a chain of blocks, bundles of data that record all completed tra
 As a solution to the block size problem, Bitcoin Developer Pieter Wuille proposed SegWit. In SegWit, certain parts of the transaction are removed, thus freeing up space on the block to add more transactions. Pieter Wuille suggested that to solve this problem, the digital signature needs to be segregated from the transactions data. Digital signature accounts for 65% of the space in a given transaction. SegWit attempts to ignore the data attached to a signature by stripping off the signature from within the input and moving it to a structure towards the end of a transaction. This would increase the 1 MB limit for block sizes to a little under 4 MB. In addition to slightly increasing the capacity size of blocks, SegWit also solves the problem where a receiver could intercept and modify the sender’s transaction ID in a bid to get more coins from the sender. Since the digital signature would be detached from the input, the unscrupulous party would have no way of changing the transaction ID without also nullifying the digital signature.
 
 #### **8.2. Bitcoin Improvement Proposals (BIPs)**
-A Bitcoin Improvement Proposal (BIP) is a design document for introducing features or information to Bitcoin. This is the standard way of communicating ideas since Bitcoin has no formal structure. BIPs are for Bitcoin what RFC is for Internet. Some famous BIPs include BIP141 (SegWit).
+A Bitcoin Improvement Proposal (BIP) is a design document for introducing features or information to Bitcoin. This is the standard way of communicating ideas since Bitcoin has no formal structure. BIPs are for Bitcoin what RFC is for Internet, PEP is for Python, etc. Some famous BIPs include BIP141 (SegWit), BIP32 (HD Wallets), BIP39 (Mnemonic Sentence/Code for generation of HD wallets), BIP44 (Defines a logical hierarchy for deterministic wallets), etc.
