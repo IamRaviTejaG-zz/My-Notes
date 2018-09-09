@@ -136,15 +136,15 @@ print (abs(-17)) # Prints 17
 ```
 
 ## String Methods
-- #### Length of a string: `.len()`
+- #### Length of a string: `len()`
 ```python
 string = "This is a string."
-a = string.len()
+a = len(string)
 print (a) # Prints 17.
 ```
 Alternatively, you can directly use:
 ```python
-a = "This is a string.".len()
+a = len("This is a string.")
 print (a)
 ```
 
